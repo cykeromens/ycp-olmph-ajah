@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {BsDropdownModule} from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import {CookieModule} from 'ngx-cookie';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
     BsDropdownModule.forRoot()
   ],
   entryComponents: [LoginComponent],
-  exports: [FormsModule, CommonModule, NgbModule, FontAwesomeModule, BsDropdownModule]
+  exports: [FormsModule, CommonModule, NgbModule, FontAwesomeModule, BsDropdownModule, HttpClientModule]
 })
 export class SharedLibsModule {
 }

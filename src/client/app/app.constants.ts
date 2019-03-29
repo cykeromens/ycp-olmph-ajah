@@ -6,6 +6,6 @@ export const VERSION = '1.0';
 /**process.env.VERSION;**/
 export const DEBUG_INFO_ENABLED = true;
 /**boolean = !!process.env.DEBUG_INFO_ENABLED;**/
-export const SERVER_API_URL = 'http://localhost:8080/';
+export const SERVER_API_URL = 'http://localhost:9000/';
 /**process.env.SERVER_API_URL;**/
 export const BUILD_TIMESTAMP = 0; /**process.env.BUILD_TIMESTAMP;**/

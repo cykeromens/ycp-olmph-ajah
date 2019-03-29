@@ -5,16 +5,34 @@ import {registerEvents} from './user.events';
 
 mongoose.Promise = require('bluebird');
 
-var UserSchema = new Schema({
-  name: String,
+const UserSchema = new Schema({
+  firstName: {
+    type: String,
+  },
+  lastName: {
+    type: String,
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
+    type: String,
+  },
   email: {
     type: String,
     lowercase: true,
     required: true
   },
-  role: {
-    type: String,
-    default: 'user'
+  activationKey: String,
+  activated: {
+    type: Boolean,
+    default: false
+  },
+  authorities: {
+    type: [],
+    uppercase: true,
+    default: ['ROLE_USER']
   },
   password: {
     type: String,

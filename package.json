@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "nodemon --watch server server"
+    "start": "nodemon --watch server server",
+    "start:server": "nodemon --watch server server"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +74,7 @@
     "summernote": "^0.8.11",
     "supertest": "^4.0.2",
     "tslib": "^1.9.0",
-    "uws": "^10.148.1",
+    "uws": "^10.148.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

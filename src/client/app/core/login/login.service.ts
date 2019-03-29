@@ -11,6 +11,8 @@ export class LoginService {
     const cb = callback || function () {
     };
 
+    debugger;
+
     return new Promise((resolve, reject) => {
       this.authServerProvider.login(credentials).subscribe(
         data => {

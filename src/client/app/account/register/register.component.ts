@@ -55,6 +55,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
   }
 
+  loginUser() {
+    this.router.navigate(['/login']);
+  }
   private processError(response: HttpErrorResponse) {
     this.success = null;
     if (response.status === 400 && response.error.type === LOGIN_ALREADY_USED_TYPE) {

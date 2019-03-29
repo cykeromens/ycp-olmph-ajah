@@ -45,13 +45,17 @@ export default function seedDatabaseIfNeeded() {
   let userPromise = User.find({}).remove()
     .then(() => User.create({
       provider: 'local',
-      name: 'Test User',
+      firstName: 'Test',
+      lastName: 'User',
+      username: 'user_1',
       email: 'test@example.com',
       password: 'test'
     }, {
       provider: 'local',
-      role: 'admin',
-      name: 'Admin',
+      authorities: ['ROLE_ADMIN'],
+      firstName: 'Admin',
+      lastName: 'Admin',
+      username: 'admin_1',
       email: 'admin@example.com',
       password: 'admin'
     })

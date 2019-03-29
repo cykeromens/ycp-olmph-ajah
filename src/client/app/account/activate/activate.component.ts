@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {ActivateService} from './activate.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -11,22 +13,22 @@ export class ActivateComponent implements OnInit {
   success: string;
   modalRef: NgbModalRef;
 
-  // constructor(private activateService: ActivateService, private route: ActivatedRoute, private router: Router) {
-  // }
+  constructor(private activateService: ActivateService, private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit() {
-    // this.route.queryParams.subscribe(params => {
-    //   this.activateService.get(params['key']).subscribe(
-    //     () => {
-    //       this.error = null;
-    //       this.success = 'OK';
-    //     },
-    //     () => {
-    //       this.success = null;
-    //       this.error = 'ERROR';
-    //     }
-    //   );
-    // });
+    this.route.queryParams.subscribe(params => {
+      this.activateService.get(params['key']).subscribe(
+        () => {
+          this.error = null;
+          this.success = 'OK';
+        },
+        () => {
+          this.success = null;
+          this.error = 'ERROR';
+        }
+      );
+    });
   }
 
   login() {

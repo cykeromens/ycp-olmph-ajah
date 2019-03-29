@@ -40,7 +40,7 @@ export function broadcast(message) {
 
 export default function initWebSocketServer(server) {
   primus = new Primus(server, {
-    transformer: 'uws',
+    // transformer: 'uws',
   });
   primus.plugin('emit', primusEmit);
 

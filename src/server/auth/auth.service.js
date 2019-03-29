@@ -4,7 +4,7 @@ import expressJwt from 'express-jwt';
 import compose from 'composable-middleware';
 import User from '../api/user/user.model';
 
-var validateJwt = expressJwt({
+let validateJwt = expressJwt({
   secret: config.secrets.session
 });
 
@@ -52,7 +52,7 @@ export function hasRole(roleRequired) {
   return compose()
     .use(isAuthenticated())
     .use(function meetsRequirements(req, res, next) {
-      if (config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(roleRequired)) {
+      if (config.userRoles.indexOf(req.user.authorities) >= config.userRoles.indexOf(roleRequired)) {
         return next();
       } else {
         return res.status(403).send('Forbidden');
@@ -76,7 +76,7 @@ export function setTokenCookie(req, res) {
   if (!req.user) {
     return res.status(404).send('It looks like you aren\'t logged in, please try again.');
   }
-  var token = signToken(req.user._id, req.user.role);
+  let token = signToken(req.user._id, req.user.authorities);
   res.cookie('token', token);
   res.redirect('/');
 }

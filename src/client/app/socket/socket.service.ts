@@ -1,4 +1,6 @@
 // import Primus from 'primus';
+// import Primus from './primus.mock';
+
 const Primus = require('primus');
 
 import primusEmit from 'primus-emit';

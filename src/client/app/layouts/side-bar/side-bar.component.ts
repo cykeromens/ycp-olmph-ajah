@@ -30,6 +30,4 @@ export class SideBarComponent implements OnInit, AfterViewInit {
   activeRoute(routename: string): boolean {
     return this.router.url.indexOf(routename) > -1;
   }
-
-
 }

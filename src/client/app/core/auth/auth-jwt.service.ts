@@ -7,7 +7,8 @@ import {SERVER_API_URL} from '../../app.constants';
 
 @Injectable({providedIn: 'root'})
 export class AuthServerProvider {
-  constructor(private http: HttpClient, private $localStorage: LocalStorageService, private $sessionStorage: SessionStorageService) {
+  constructor(private http: HttpClient, private $localStorage: LocalStorageService,
+              private $sessionStorage: SessionStorageService) {
   }
 
   getToken() {
@@ -16,19 +17,24 @@ export class AuthServerProvider {
 
   login(credentials): Observable<any> {
     const data = {
-      username: credentials.username,
+      email: credentials.email,
       password: credentials.password,
       rememberMe: credentials.rememberMe
     };
     return this.http.post(SERVER_API_URL + 'api/authenticate', data, {observe: 'response'}).pipe(map(authenticateSuccess.bind(this)));
 
     function authenticateSuccess(resp) {
-      const bearerToken = resp.headers.get('Authorization');
-      if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
-        const jwt = bearerToken.slice(7, bearerToken.length);
+      // const bearerToken = resp.headers.get('Authorization');
+      const jwt = resp.body.token;
+      if (jwt) {
         this.storeAuthenticationToken(jwt, credentials.rememberMe);
         return jwt;
       }
+      // if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
+      //   const jwt = bearerToken.slice(7, bearerToken.length);
+      //   this.storeAuthenticationToken(jwt, credentials.rememberMe);
+      //   return jwt;
+      // }
     }
   }
 
