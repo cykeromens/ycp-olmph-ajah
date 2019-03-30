@@ -22,7 +22,6 @@ export class Principal {
   }
 
   hasAnyAuthorityDirect(authorities: string[]): boolean {
-    debugger;
     if (!this.authenticated || !this.userIdentity || !this.userIdentity.authorities) {
       return false;
     }
@@ -68,7 +67,6 @@ export class Principal {
       .toPromise()
       .then(response => {
         const account = response.body;
-        debugger;
         if (account) {
           this.userIdentity = account;
           this.authenticated = true;

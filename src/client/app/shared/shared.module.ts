@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {SharedLibsModule} from './shared-libs.module';
+// import {YcpAlertComponent} from './alert/alert.component';
+// import {YcpAlertErrorComponent} from './alert/alert-error.component';
 
 @NgModule({
   imports: [
     SharedLibsModule,
   ],
-  exports: [SharedLibsModule]
+  // declarations: [YcpAlertComponent, YcpAlertErrorComponent],
+  exports: [SharedLibsModule],
+
 })
 export class YcpOlmphSharedModule {
 }

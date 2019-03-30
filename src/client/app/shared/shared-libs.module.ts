@@ -7,7 +7,8 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {BsDropdownModule} from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
-import {CookieModule} from 'ngx-cookie';
+import {FormWizardModule} from 'angular-wizard-form/dist';
+// import {NgJhipsterModule} from 'ng-jhipster';
 
 @NgModule({
   declarations: [],
@@ -15,13 +16,19 @@ import {CookieModule} from 'ngx-cookie';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    FormWizardModule,
+    // NgJhipsterModule.forRoot({
+    //   // set below to true to make alerts look like toast
+    //   alertAsToast: false,
+    //   alertTimeout: 5000
+    // }),
     NgbModule,
     // CookieModule.forRoot(),
     FontAwesomeModule,
     BsDropdownModule.forRoot()
   ],
   entryComponents: [LoginComponent],
-  exports: [FormsModule, CommonModule, NgbModule, FontAwesomeModule, BsDropdownModule, HttpClientModule]
+  exports: [FormsModule, FormWizardModule, CommonModule, NgbModule, FontAwesomeModule, BsDropdownModule, HttpClientModule]
 })
 export class SharedLibsModule {
 }
