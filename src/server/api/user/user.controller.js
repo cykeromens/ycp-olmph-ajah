@@ -77,9 +77,9 @@ export function destroy(req, res) {
  * Change a users password
  */
 export function changePassword(req, res) {
-  var userId = req.user._id;
-  var oldPass = String(req.body.oldPassword);
-  var newPass = String(req.body.newPassword);
+  const userId = req.user._id;
+  const oldPass = String(req.body.oldPassword);
+  const newPass = String(req.body.newPassword);
 
   return User.findById(userId).exec()
     .then(user => {
