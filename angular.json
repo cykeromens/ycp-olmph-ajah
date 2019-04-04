@@ -93,7 +93,7 @@
             "main": "src/client/test.ts",
             "polyfills": "src/client/polyfills.ts",
             "tsConfig": "src/client/tsconfig.spec.json",
-            "karmaConfig": "src/src/karma.conf.js",
+            "karmaConfig": "src/client/karma.conf.js",
             "styles": [
               "src/client/styles.scss"
             ],
