@@ -9,10 +9,6 @@ services: mongodb
 cache:
   directories:
   - node_modules
-deploy:
-  provider: heroku
-  api_key:
-    secure: SvPI26eBvQsdWlgjjsz3mE0mWehb2mGVLjfLI++nXmmIMwSHfE5vnjwWlZkCQuBQzNRId9ssm1oK0tYqvRwRrvukmjWvELG1V+iepoZ0u2FGUizHoyobL5GoIYKtu4jKhh6meuHFzMhvEoH3bjQUi5RqL+C9K+xHwdW5rUEmNr4tWq+8aORabNHGrsB2Zde5qQB1xQPScGv145WPD8Njs17YdTPuJoTfK1LU7LQX31cm6kBJ36NpjriAqarXEOVhvDYd1XZKTIEYEp15P/xiEeB0Guw6GhjZQKIdcqvh+19dG3TC90Se+x2Bnhwj6SMjoFZi+vJl1n4/EDXAtdSUbsZRPq3JMTYlioz+cjDRvX0jIRymaKQhrzBBQkWVt2zKGKaqPG4zpfOYFcO6I2MHKJjSx+4ut5BeMDjhIgvLjx2gWH165YXYsBOGmAbgDUQetMvEZ/j5cQBBNAsT8Z9bTtQBgXhz8zlu5YlsBgSt0nIqodeCdf6qa97HInUZIrZik2ZB0NLTIVY72wU3giVu8PibKuibE5EO+5EZBr8slhQhUKcNZRG96vSXQRRV4EAh8SbIczyuqbNii8yN7dot4Eq+viNSQt4r09G5ha+EG+25RqC2HxuWk+sv8jNor3oDtfzL4opgDHbVttr+Ew/+DKFElVG4cQmvSo6eFj0qQxE=
 env:
   matrix:
   - CXX=g++-4.8
