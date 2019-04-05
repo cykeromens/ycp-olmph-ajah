@@ -3,6 +3,8 @@ node_js:
 - 10
 before_script:
 - npm install -g gulp-cli
+script:
+  - npm build
 services: mongodb
 cache:
   directories:
