@@ -18,3 +18,10 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+deploy:
+  provider: heroku
+  api_key:
+    secure: Te1oZFG4G+0y7MJWuTZuIDY7YLL90wviC/2+g+NFNzcjMu9ArkUI61DWA1aLf9HK1L0Gi7IY6rHtebSJxg5pjnQejwPAcfuvmr3YTYDILCZfrEVmzWimzf5a3viwZoV44te6y7Vaq5z6CeOC+07SQPaBC5DqDwlqsWd6cryisDYs4GgLTL0pK8/mf5T+dF7kS+Oo8GY39xeAsDy6NIALKCLvOY6HYY1cPSfN/r2JitDY1WwMBTToEYQzpoGOgLBejUQIPxjTFvzjS8CV9qlRiLcbV2EfwkDgMhHhqNpqBFbpjX8xOEqAic+SDuS3YuFDuiHAsoVd06zvhFX5C1iVQE3LB0ajNetq3Yjg1Dfk/Wr39UpA4DSm3tO4b1tiOPOYSA+ictYY7jvQlXcA3bI6jLXfBFC7zSJpxM8AVi5H86H/atqoPD3sLJNUSnNtZ44h1vDcxIdyje3FcF1TIvSYCy8WSGfAB3Hs+KxQO/Q53m7ILBrlBeUfz0BJhfFYRg1wlNmzPdqyEjGs9rGh36zPwGtTuPH1GB0Ga3ZH0sJNOITB1V3QbCLte7D7d7sy9sBBp07eYx2MvKBasQ6uRurtGqdftaHw1q/d08bsIijJfziwW4QBOCXrlrJiBmhSlTC1/i26jdJ5XW1zT7Z/es+Nwv9zVHF9+Mq4NLxMvFmUwuc=
+  app: ycp-olmph-ajah
+  on:
+    repo: cykeromens/ycp-olmph-ajah
