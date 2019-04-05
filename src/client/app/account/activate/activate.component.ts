@@ -32,6 +32,6 @@ export class ActivateComponent implements OnInit {
   }
 
   login() {
-    // this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 }

@@ -11,14 +11,16 @@ import {loginRoute} from './login/login.route';
 
 
 const ACCOUNT_ROUTES = [
-  activateRoute, passwordRoute,
+  passwordRoute,
   settingsRoute
 ];
 const BLANK_ROUTE = [
   registerRoute,
   passwordResetInitRoute,
   passwordResetFinishRoute,
-  loginRoute
+  loginRoute,
+  activateRoute,
+
 ];
 
 export const accountState: Routes = [

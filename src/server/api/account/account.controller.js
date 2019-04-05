@@ -2,6 +2,7 @@ import User from '../user/user.model';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
 import {generateRandomString} from "../helper/helper-util";
+import {sendMail} from "../../config/mail";
 
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
@@ -22,13 +23,13 @@ function handleError(res, statusCode) {
  */
 export function register(req, res) {
   const newUser = new User(req.body);
-  debugger;
-  let randomString = generateRandomString(20);
+  let randomString = generateRandomString(100);
   newUser.provider = 'local';
   newUser.role = 'user';
   newUser.activationKey = randomString;
   return newUser.save()
     .then(function (user) {
+      sendMail(user,"Activation Message!").catch(console.error);
       const token = jwt.sign({_id: user._id}, config.secrets.session, {
         expiresIn: 60 * 60 * 5
       });

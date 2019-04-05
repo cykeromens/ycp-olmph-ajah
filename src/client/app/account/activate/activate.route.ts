@@ -10,5 +10,5 @@ export const activateRoute: Route = {
     authorities: [],
     pageTitle: 'Activation'
   },
-  canActivate: [UserRouteAccessService]
+  // canActivate: [UserRouteAccessService]
 };
