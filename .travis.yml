@@ -1,17 +1,20 @@
 language: node_js
 node_js:
-  - 10
+- 10
 before_script:
-  - npm install -g gulp-cli
+- npm install -g gulp-cli
 services: mongodb
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
+  matrix:
   - CXX=g++-4.8
+  global:
+    secure: Cwd+gVKEndJbfcoKKF8BWd7lq5+pk5jK/P9aMb1gWWNUCmC1HabTT7j7z16n1JBzr48su4rmtNz4AWNCrJG7tEgszKF+BaJl8qAVeBGZX/NiTwK0E8ePmo8kbtupeJ6C9pZs3IeHSAkdsWvzZv0s9DZ6Y62fWpM8S0FI6TYeM914oRhOIzdkjj9ZtkfhLShVsue2EXPR5qx8cYGIQCkZ6oWANuqP+4Moeal0KH8ntFZhLRGG75AIanuH100yuFzXmIjnytZku6J9B5/l5lG5AdKZURmqsxT2gJeK/sV4GTEaJoneiHYSQSo1OzT3FvvQ0HSTLPovAWxu1ciU3qaczXMibldmdEHTUlrmrXoEFKbX1lJxCVqLXRr8fAoHoFJXoD2cGJ2LFYq9wmma25v1mMe3atoqZjc/0UMiUbPKhFTmDRQ32w5vOpkkCbIMLZsesXKn4BlfN0VENYzMyCwnAZxH99pb5MFu/PmgAtBh+XX1Tu1LEACywASZeKdhR/1YyDKJfNDCLTpJCcSwzq41Qyh5KYvOH1KZJAUYHV+QSwj+FeQqQIuJszBC4fgtdN19KWx3+GA/N/2Kz1R4e2yF2vDSl5PExWMFnGJWeMIuxZI/pw2oc4g+r92nBQ9GfMWPsMF7K1MeH26p5QMIH/hkBqecun4rdhSRYR7T/oSr3dY=
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
